@@ -8,7 +8,7 @@ import Accordion from "@/components/Accordion";
 import { Tips, EndCta } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "Mortgage Calculator — Xperts Mortgage",
+  title: "EMI Calculator — Xperts Home Mortgage",
   description:
     "Estimate your monthly mortgage payment in seconds. Adjust property price, down payment, interest rate and tenure to see your EMI update live.",
 };

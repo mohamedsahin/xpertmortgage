@@ -3,7 +3,8 @@ import {
   TrendingUp, Building2, Users, FileText, Search, BadgeCheck, Gauge, FileX, Coins, Layers3,
   HeartHandshake, UserCog, LineChart, Globe, Plus, FileCheck, BarChart3, CalendarClock, Wallet,
   HandCoins, UserCheck, Zap, LayoutGrid, BadgePercent, Clock, Check, Phone, Mail, MapPin,
-  ArrowRight, Calculator, ChevronRight, Send,
+  ArrowRight, Calculator, ChevronRight, Send, MessageCircle, Repeat, Lightbulb, Percent,
+  Newspaper, Quote, ArrowUpRight,
   type LucideIcon, type LucideProps,
 } from "lucide-react";
 
@@ -17,6 +18,8 @@ const MAP: Record<string, LucideIcon> = {
   "hand-coins": HandCoins, "user-check": UserCheck, "zap": Zap, "layout-grid": LayoutGrid,
   "badge-percent": BadgePercent, "clock": Clock, "check": Check, "phone": Phone, "mail": Mail,
   "map-pin": MapPin, "arrow-right": ArrowRight, "calculator": Calculator, "chevron-right": ChevronRight, "send": Send,
+  "message-circle": MessageCircle, "repeat": Repeat, "lightbulb": Lightbulb, "percent": Percent,
+  "newspaper": Newspaper, "quote": Quote, "arrow-up-right": ArrowUpRight,
 };
 
 export default function Icon({ name, ...props }: { name: string } & LucideProps) {

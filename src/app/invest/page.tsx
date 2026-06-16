@@ -8,7 +8,7 @@ import { BgSkyline } from "@/components/Skyline";
 import { FeatureRow, ServicesGrid, EndCta, Photo } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "Why Invest in Dubai — Xperts Mortgage",
+  title: "Why Invest in Dubai — Xperts Home Mortgage",
   description:
     "Dubai isn't just a place to live, it's a place to build wealth. High rental yields, tax-free income, strong capital growth and a global investor hub.",
 };
@@ -30,7 +30,7 @@ export default function InvestPage() {
             <Reveal>
               <span className="eyebrow light">Invest in Dubai. Build wealth. Secure your future.</span>
               <h2 style={{ margin: "16px 0 0" }}>Dubai isn&apos;t just a place to live, it&apos;s a place to <span className="text-gold">build wealth.</span></h2>
-              <p className="sub">High rental yields. Tax-free income. Strong growth. Global demand. Take a mortgage from Xperts Mortgage and invest in Dubai properties with confidence.</p>
+              <p className="sub">High rental yields. Tax-free income. Strong growth. Global demand. Take a mortgage from Xperts Home Mortgage and invest in Dubai properties with confidence.</p>
               <div className="stat-row">
                 <Reveal className="stat"><div className="sn"><Counter value={8} suffix="%" /></div><div className="st">High Rental Yields</div><div className="sd">6–8% average returns</div></Reveal>
                 <Reveal className="stat" delay={1}><div className="sn"><Icon name="trending-up" size={34} /></div><div className="st">Strong Capital Growth</div><div className="sd">Property values keep rising</div></Reveal>
@@ -73,7 +73,7 @@ export default function InvestPage() {
       <EndCta
         variant="green"
         title="The right time to invest is now. The right partner is us."
-        text="Take a mortgage from Xperts Mortgage and turn your investment dreams into reality."
+        text="Take a mortgage from Xperts Home Mortgage and turn your investment dreams into reality."
       >
         <Link href="/contact" className="btn btn-light">Get in Touch Today <Icon name="arrow-right" className="arr" /></Link>
         <Link href="/calculator" className="btn" style={{ background: "rgba(255,255,255,.14)", color: "#fff" }}>Estimate my returns</Link>

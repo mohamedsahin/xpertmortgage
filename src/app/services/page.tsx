@@ -7,9 +7,9 @@ import ClientTabs from "@/components/ClientTabs";
 import { ServicesGrid, TrustStrip, EndCta } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "Mortgage Services — Xperts Mortgage",
+  title: "Mortgage Services — Xperts Home Mortgage",
   description:
-    "One company, all mortgage solutions: home loans, refinance, off-plan, buy-to-let, equity release, commercial, personal, business, vehicle and debt consolidation loans.",
+    "One company, all mortgage solutions: Buy to Live, Buy to Let, Buyouts, Refinance, Equity Release, Off-Plan Mortgages and Commercial Mortgages across the UAE.",
 };
 
 export default function ServicesPage() {

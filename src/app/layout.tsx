@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const display = Archivo({
   subsets: ["latin"], weight: ["500", "600", "700", "800", "900"],
@@ -19,9 +20,9 @@ const serif = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Xperts Mortgage — Your Dream Home, Our Expertise",
+  title: "Xperts Home Mortgage — Your Home, Our Expertise.",
   description:
-    "Smart mortgage solutions tailored for you. Access to 20+ leading banks, expert guidance and quick approvals for residents, expats and investors in Dubai.",
+    "Your Home, Our Expertise. Smart mortgage solutions tailored for you — access to 20+ leading banks, expert guidance and quick approvals for residents, expats and investors in the UAE.",
 };
 
 export const viewport: Viewport = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppFloat />
         <MobileBar />
       </body>
     </html>

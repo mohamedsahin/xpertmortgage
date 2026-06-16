@@ -2,7 +2,7 @@
   "name": "xperts-mortgage",
   "version": "1.0.0",
   "private": true,
-  "description": "Xperts Mortgage — Next.js + TypeScript marketing site",
+  "description": "Xperts Home Mortgage — Next.js + TypeScript marketing site",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

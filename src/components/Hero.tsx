@@ -30,7 +30,7 @@ export default function Hero() {
           <div className={`hero-copy${go ? " go" : ""}`}>
             <span className="eyebrow">Smart Mortgage Solutions • Dubai</span>
             <h1>
-              <span className="ln"><span>Your Dream Home,</span></span>
+              <span className="ln"><span>Your Home,</span></span>
               <span className="ln"><span className="text-green">Our Expertise.</span></span>
             </h1>
             <p className="hero-sub">

@@ -128,10 +128,11 @@ header.nav.scrolled .wrap{height:70px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:52px;width:auto;transition:height .3s}
 header.nav.scrolled .brand img{height:44px}
-.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks{display:flex;gap:18px;align-items:center}
 .navlinks a.active{color:var(--red)}
 .navlinks a.active::after{width:100%}
-.navlinks a{font-weight:600;font-size:.95rem;color:var(--ink);position:relative;padding:6px 0;transition:color .2s}
+.navlinks a{font-weight:600;font-size:.9rem;color:var(--ink);position:relative;padding:6px 0;transition:color .2s;white-space:nowrap}
+@media(min-width:1025px) and (max-width:1180px){.navlinks{gap:14px}.navlinks a{font-size:.84rem}}
 .navlinks a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);transition:width .3s var(--ease)}
 .navlinks a:hover{color:var(--red)}
 .navlinks a:hover::after{width:100%}
@@ -615,3 +616,82 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 
 /* timeline progress: animate when the timeline reveals into view */
 .timeline.in .tl-prog{width:84%}
+
+/* ============================================================ MISSION & VISION */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mv-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:clamp(28px,3.4vw,42px);position:relative;overflow:hidden;transition:.5s var(--ease)}
+.mv-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:0;
+  background:linear-gradient(180deg,var(--red),var(--gold));transition:height .6s var(--ease)}
+.mv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+.mv-card:hover::before{height:100%}
+.mv-card .mv-ic{width:60px;height:60px;border-radius:16px;background:var(--green);display:grid;place-items:center;margin-bottom:20px}
+.mv-card:nth-child(2) .mv-ic{background:var(--red)}
+.mv-card .mv-ic svg{width:28px;height:28px;color:#fff}
+.mv-card h3{font-size:1.5rem;margin-bottom:12px}
+.mv-card p{color:var(--muted);font-size:1.02rem}
+@media(max-width:760px){.mv-grid{grid-template-columns:1fr;gap:18px}}
+
+/* ============================================================ OUR TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:32px 24px;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s}
+.team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:transparent}
+.team-avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:900;font-size:2rem;color:#fff;letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--green),var(--green-600));box-shadow:var(--shadow-sm)}
+.team-card:nth-child(even) .team-avatar{background:linear-gradient(135deg,var(--red),var(--red-600))}
+.team-card h4{font-size:1.18rem;margin-bottom:4px}
+.team-role{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:.82rem;
+  color:var(--gold);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+.team-card p{color:var(--muted);font-size:.9rem;line-height:1.55}
+.team-contact{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.team-contact a{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s var(--ease);color:var(--green)}
+.team-contact a:hover{background:var(--green);border-color:var(--green);color:#fff;transform:translateY(-3px)}
+.team-contact a svg{width:18px;height:18px}
+@media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.team-grid{grid-template-columns:1fr}}
+
+/* ============================================================ DOCUMENTS ACCORDION */
+.docs-wrap{max-width:920px}
+.docs{display:flex;flex-direction:column;gap:14px}
+.doc-item{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:border-color .4s,box-shadow .4s}
+.doc-item.open{border-color:var(--green);box-shadow:var(--shadow-sm)}
+.doc-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px;
+  display:flex;align-items:center;gap:16px;font-family:var(--font-display);font-weight:800;font-size:1.15rem;color:var(--ink)}
+.doc-q .doc-emoji{font-size:1.5rem;line-height:1}
+.doc-q .doc-label{flex:1}
+.doc-q .pm{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex:none;transition:.4s var(--ease)}
+.doc-q .pm svg{width:16px;height:16px;transition:.4s var(--ease)}
+.doc-item.open .pm{background:var(--green);border-color:var(--green)}
+.doc-item.open .pm svg{color:#fff;transform:rotate(45deg)}
+.doc-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.doc-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:6px 24px 28px}
+.doc-group h5{font-family:var(--font-display);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.doc-group ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.doc-group li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem;color:var(--muted);font-weight:500}
+.doc-group .ck{width:22px;height:22px;border-radius:50%;background:var(--green);flex:none;display:grid;place-items:center;margin-top:1px}
+.doc-group .ck svg{width:12px;height:12px;color:#fff}
+@media(max-width:620px){.doc-groups{grid-template-columns:1fr;gap:18px}.doc-q{padding:18px 18px;font-size:1.05rem}.doc-groups{padding:4px 18px 22px}}
+
+/* ============================================================ FLOATING WHATSAPP */
+.wa-float{position:fixed;right:22px;bottom:24px;z-index:84;display:inline-flex;align-items:center;gap:0;
+  height:60px;border-radius:999px;background:#25D366;color:#fff;
+  box-shadow:0 14px 34px -10px rgba(37,211,102,.7);overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  animation:waPulse 2.6s ease-in-out infinite}
+.wa-float svg{width:30px;height:30px;flex:none;margin:0 15px}
+.wa-float .wa-float-label{font-family:var(--font-display);font-weight:700;font-size:.95rem;white-space:nowrap;
+  max-width:0;opacity:0;overflow:hidden;transition:max-width .4s var(--ease),opacity .3s,padding .4s}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 20px 44px -12px rgba(37,211,102,.85)}
+.wa-float:hover .wa-float-label{max-width:160px;opacity:1;padding-right:22px}
+@keyframes waPulse{0%,100%{box-shadow:0 14px 34px -10px rgba(37,211,102,.7),0 0 0 0 rgba(37,211,102,.5)}
+  50%{box-shadow:0 14px 34px -10px rgba(37,211,102,.7),0 0 0 12px rgba(37,211,102,0)}}
+@media(max-width:768px){
+  /* sit above the sticky mobile action bar */
+  .wa-float{right:16px;bottom:76px;height:54px}
+  .wa-float svg{width:27px;height:27px;margin:0 13px}
+  /* keep it compact on mobile; label expands on tap-hover only */
+  .wa-float:hover .wa-float-label{max-width:0;opacity:0;padding-right:0}
+}
+@media print{.wa-float{display:none!important}}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
-import { trust, easy, services, difficult, steps, tips } from "@/lib/data";
+import { trust, easy, services, difficult, steps, tips, insightCategories } from "@/lib/data";
 
 export function Placeholder({ label }: { label: string }) {
   return (
@@ -62,6 +62,23 @@ export function ServicesGrid({ limit }: { limit?: number }) {
           <p>{desc}</p>
           <Link href="/contact" className="more">
             Enquire <Icon name="arrow-right" />
+          </Link>
+        </Reveal>
+      ))}
+    </div>
+  );
+}
+
+export function InsightsGrid() {
+  return (
+    <div className="svc-grid">
+      {insightCategories.map(([icon, title, desc], i) => (
+        <Reveal key={title} className="svc insight-card" delay={(i % 3) + 1}>
+          <div className="sic"><Icon name={icon} /></div>
+          <h3>{title}</h3>
+          <p>{desc}</p>
+          <Link href="/contact" className="more">
+            Read insights <Icon name="arrow-right" />
           </Link>
         </Reveal>
       ))}

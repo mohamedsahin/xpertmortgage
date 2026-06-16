@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Icon from "./Icon";
-import { contact } from "@/lib/data";
+import { contact, waLink } from "@/lib/data";
 
 const tel = `tel:${contact.phone.replace(/\s/g, "")}`;
-const wa = "https://wa.me/97140000000?text=Hi%20Xperts%20Mortgage%2C%20I%27d%20like%20a%20free%20consultation.";
+const wa = waLink();
 
 /** Sticky bottom action bar — mobile only (shown via CSS ≤768px). */
 export default function MobileBar() {

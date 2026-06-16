@@ -6,9 +6,9 @@ import Reveal from "@/components/Reveal";
 import { Timeline, FeatureRow, EndCta } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "How It Works — Xperts Mortgage",
+  title: "Process — How It Works | Xperts Home Mortgage",
   description:
-    "A simple, transparent mortgage journey from consultation to disbursement — handled end-to-end by your dedicated Xperts Mortgage expert.",
+    "A simple, transparent mortgage journey from consultation to disbursement — handled end-to-end by your dedicated Xperts Home Mortgage expert.",
 };
 
 export default function ProcessPage() {

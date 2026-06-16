@@ -5,6 +5,10 @@ import Icon from "./Icon";
 
 export default function LeadForm() {
   const [sent, setSent] = useState(false);
+  const [category, setCategory] = useState("UAE Resident");
+
+  // Employment status doesn't apply to investors.
+  const showEmployment = category !== "Investor";
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,27 +30,37 @@ export default function LeadForm() {
           <div className="frm-row">
             <div className="frm-field">
               <label>I&apos;m interested in</label>
-              <select defaultValue="Home / Residential Mortgage">
-                <option>Home / Residential Mortgage</option>
-                <option>Off-Plan Property</option>
+              <select defaultValue="Buy to Live">
+                <option>Buy to Live</option>
+                <option>Buy to Let</option>
+                <option>Buyouts</option>
                 <option>Refinance</option>
-                <option>Buy-to-Let / Investment</option>
                 <option>Equity Release</option>
-                <option>Commercial Property</option>
-                <option>Business / Personal Loan</option>
-                <option>I have a difficult case</option>
+                <option>Off-Plan Mortgages</option>
+                <option>Commercial Mortgages</option>
+                <option>I have a complex case</option>
               </select>
             </div>
             <div className="frm-field">
               <label>I am</label>
-              <select defaultValue="UAE Resident">
+              <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option>UAE National</option>
+                <option>GCC National</option>
                 <option>UAE Resident</option>
-                <option>Expat</option>
-                <option>Non-Resident Investor</option>
-                <option>Self-Employed</option>
+                <option>Investor</option>
+                <option>Non-Resident</option>
               </select>
             </div>
           </div>
+          {showEmployment && (
+            <div className="frm-field">
+              <label>Employment status</label>
+              <select defaultValue="Salaried">
+                <option>Salaried</option>
+                <option>Self-Employed</option>
+              </select>
+            </div>
+          )}
           <div className="frm-field"><label>Message (optional)</label><textarea rows={3} placeholder="Anything we should know?" /></div>
           <button type="submit" className="btn btn-red">Send My Request <Icon name="send" className="arr" /></button>
         </form>
@@ -55,7 +69,7 @@ export default function LeadForm() {
           <div className="okic"><Icon name="check" /></div>
           <h3>Thank you!</h3>
           <p className="fp" style={{ margin: "6px 0 0" }}>
-            Your request has been received. An Xperts Mortgage advisor will be in touch shortly.
+            Your request has been received. An Xperts Home Mortgage advisor will be in touch shortly.
           </p>
         </div>
       )}

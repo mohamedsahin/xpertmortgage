@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
-import { faqs } from "@/lib/data";
+import { faqs, type Pair } from "@/lib/data";
 
 function Item({
   q, a, open, onToggle,
@@ -27,11 +27,11 @@ function Item({
   );
 }
 
-export default function Accordion() {
+export default function Accordion({ items = faqs }: { items?: Pair[] }) {
   const [open, setOpen] = useState(0);
   return (
     <div>
-      {faqs.map(([q, a], i) => (
+      {items.map(([q, a], i) => (
         <Item key={q} q={q} a={a} open={open === i} onToggle={() => setOpen(open === i ? -1 : i)} />
       ))}
     </div>

@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
-import { nav, contact } from "@/lib/data";
+import { nav, contact, company, waLink } from "@/lib/data";
 
 const tel = `tel:${contact.phone.replace(/\s/g, "")}`;
-const wa = "https://wa.me/97140000000?text=Hi%20Xperts%20Mortgage%2C%20I%27d%20like%20a%20free%20consultation.";
+const wa = waLink();
 
 export default function Header() {
   const pathname = usePathname();
@@ -46,9 +46,9 @@ export default function Header() {
 
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="wrap">
-          <Link className="brand" href="/" aria-label="Xperts Mortgage home" onClick={close}>
+          <Link className="brand" href="/" aria-label={`${company.name} home`} onClick={close}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Xperts Mortgage" />
+            <img src="/logo.png" alt={company.name} />
           </Link>
 
           <nav className={`navlinks${open ? " open" : ""}`}>

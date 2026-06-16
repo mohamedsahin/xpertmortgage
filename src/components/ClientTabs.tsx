@@ -6,11 +6,10 @@ import Icon from "./Icon";
 import { Photo } from "./Sections";
 import { clients } from "@/lib/data";
 
-// matches the order of `clients`: Families, Self-Employed, Business Owners, Investors, Expats & NRIs
+// matches the order of `clients`: Employed, Self-Employed, Investors, NRIs
 const photos = [
-  "/images/families.jpg",
-  "/images/self-employed.jpg",
   "/images/business.jpg",
+  "/images/self-employed.jpg",
   "/images/investors.jpg",
   "/images/expats.jpg",
 ];
@@ -53,7 +52,7 @@ export default function ClientTabs() {
               </Link>
             </div>
             <div className="panel-photo">
-              <Photo src={photos[i]} alt={`${name} — Xperts Mortgage clients`} />
+              <Photo src={photos[i]} alt={`${name} — Xperts Home Mortgage clients`} />
             </div>
           </div>
         );
