@@ -417,6 +417,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   border-radius:10px;font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--ivory);transition:.25s}
 .frm-field input:focus,.frm-field select:focus,.frm-field textarea:focus{outline:none;border-color:var(--green);background:#fff;box-shadow:0 0 0 4px rgba(14,59,46,.08)}
 .form .btn{width:100%;justify-content:center;margin-top:6px}
+.form .btn:disabled{opacity:.7;cursor:progress;transform:none}
+.frm-error{color:var(--red);font-size:.88rem;font-weight:600;margin:4px 0 10px}
 .form .ok{display:none;text-align:center;padding:30px 10px}
 .form .ok.show{display:block;animation:fadeUp .5s var(--ease)}
 .form .ok .okic{width:64px;height:64px;border-radius:50%;background:var(--green);display:grid;place-items:center;margin:0 auto 16px}
