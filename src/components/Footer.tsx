@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt={company.name} />
+            <img src="/logo.jpeg" alt={company.name} />
             <p>
               {company.slogan} Making home ownership simple, smart &amp; stress-free — smart mortgage
               solutions for residents, expats and investors across the UAE.

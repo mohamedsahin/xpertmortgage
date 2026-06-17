@@ -15,7 +15,7 @@ export type Client = [
 export type NavItem = { label: string; href: string };
 export type DocGroup = { group: string; items: string[] };
 export type DocCategory = { key: string; icon: string; emoji: string; label: string; groups: DocGroup[] };
-export type Member = { name: string; role: string; bio: string; email?: string; phone?: string };
+export type Member = { name: string; role: string; bio?: string; photo?: string; email?: string; phone?: string };
 
 // ---------- Brand ----------
 export const company = {
@@ -116,32 +116,26 @@ export const missionVision = {
 };
 
 // ---------- Our Team ----------
-// NOTE: Replace names, roles, bios and photos with the real team details.
-// Drop photos into /public/images/team/<file>.jpg and add a `photo` field if desired.
+// Photos live in /public/images/team/. Members without a photo show an initials avatar.
 export const team: Member[] = [
   {
-    name: "Team Member One",
-    role: "Managing Director",
-    bio: "Leads Xperts Home Mortgage with over 15 years in UAE property finance, guiding clients to the right solution for every goal.",
-    email: "info@xpertshome.com",
+    name: "Hashim",
+    role: "Operations Executive",
+    photo: "/images/team/hashim-avatar.jpg",
+    bio: "Keeps every application moving smoothly — coordinating documentation and lenders so your mortgage process stays fast and stress-free.",
+    email: "hashim@xpertshome.com",
   },
   {
-    name: "Team Member Two",
-    role: "Senior Mortgage Advisor",
-    bio: "Specializes in complex and self-employed cases, turning challenging applications into approvals with the right lender.",
-    email: "info@xpertshome.com",
+    name: "Prakash",
+    role: "Mortgage Advisor",
+    photo: "/images/team/prakash-avatar.jpg",
+    bio: "Guides clients to the right mortgage solution with expert, honest advice tailored to your goals and situation.",
+    email: "prakash@xpertshome.com",
   },
   {
-    name: "Team Member Three",
-    role: "Investment & Buy-to-Let Specialist",
-    bio: "Helps investors and NRIs structure portfolio finance that maximizes returns across the Dubai property market.",
-    email: "info@xpertshome.com",
-  },
-  {
-    name: "Team Member Four",
-    role: "Client Relations Manager",
-    bio: "Your point of contact from first enquiry to disbursement, keeping every step transparent, fast and stress-free.",
-    email: "info@xpertshome.com",
+    name: "Sunil",
+    role: "Business Development Manager",
+    email: "sunil@xpertshome.com",
   },
 ];
 
@@ -230,10 +224,9 @@ export const nav: NavItem[] = [
 ];
 
 // ---------- Contact ----------
-// TODO: replace phone & whatsapp with the official Xperts Home Mortgage numbers.
 export const contact = {
-  phone: "+971 4 000 0000",
-  whatsapp: "971500000000", // digits only, international format (no + or spaces)
+  phone: "+971 50 601 8455",
+  whatsapp: "971506018455", // digits only, international format (no + or spaces)
   email: "info@xpertshome.com",
   location: "Dubai, United Arab Emirates",
 };

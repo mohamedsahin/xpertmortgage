@@ -16,10 +16,15 @@ export default function Team() {
     <div className="team-grid">
       {team.map((m, i) => (
         <Reveal key={m.name} className="team-card" delay={(i % 4) + 1}>
-          <div className="team-avatar" aria-hidden="true">{initials(m.name)}</div>
+          {m.photo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="team-photo" src={m.photo} alt={`${m.name} — ${m.role}`} loading="lazy" />
+          ) : (
+            <div className="team-avatar" aria-hidden="true">{initials(m.name)}</div>
+          )}
           <h4>{m.name}</h4>
           <span className="team-role">{m.role}</span>
-          <p>{m.bio}</p>
+          {m.bio && <p>{m.bio}</p>}
           {(m.email || m.phone) && (
             <div className="team-contact">
               {m.phone && (

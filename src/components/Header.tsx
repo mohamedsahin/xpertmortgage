@@ -48,7 +48,7 @@ export default function Header() {
         <div className="wrap">
           <Link className="brand" href="/" aria-label={`${company.name} home`} onClick={close}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt={company.name} />
+            <img src="/logo.jpeg" alt={company.name} />
           </Link>
 
           <nav className={`navlinks${open ? " open" : ""}`}>

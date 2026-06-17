@@ -126,8 +126,8 @@ header.nav.scrolled{background:rgba(246,243,236,.94);box-shadow:0 8px 30px -18px
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .3s}
 header.nav.scrolled .wrap{height:70px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{height:52px;width:auto;transition:height .3s}
-header.nav.scrolled .brand img{height:44px}
+.brand img{height:60px;width:auto;transition:height .3s;border-radius:8px}
+header.nav.scrolled .brand img{height:50px}
 .navlinks{display:flex;gap:18px;align-items:center}
 .navlinks a.active{color:var(--red)}
 .navlinks a.active::after{width:100%}
@@ -429,7 +429,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* ============================================================ FOOTER */
 footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:46px}
-.foot-brand img{height:60px;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.96}
+.foot-brand img{height:104px;width:auto;margin-bottom:18px;border-radius:14px;box-shadow:0 10px 30px -12px rgba(0,0,0,.5)}
 .foot-brand p{font-size:.92rem;max-width:32ch}
 .foot-col h5{color:#fff;font-family:var(--font-display);font-size:1rem;margin-bottom:18px;letter-spacing:.02em}
 .foot-col a{display:block;padding:7px 0;font-size:.92rem;transition:.2s;color:#b7b0a6}
@@ -635,12 +635,15 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 @media(max-width:760px){.mv-grid{grid-template-columns:1fr;gap:18px}}
 
 /* ============================================================ OUR TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:920px;margin:0 auto}
 .team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
   padding:32px 24px;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s}
 .team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:transparent}
-.team-avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
-  font-family:var(--font-display);font-weight:900;font-size:2rem;color:#fff;letter-spacing:.02em;
+.team-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 18px;display:block;
+  border:3px solid var(--ivory-2);box-shadow:var(--shadow-sm)}
+.team-card:hover .team-photo{border-color:var(--gold-soft)}
+.team-avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:900;font-size:2.4rem;color:#fff;letter-spacing:.02em;
   background:linear-gradient(135deg,var(--green),var(--green-600));box-shadow:var(--shadow-sm)}
 .team-card:nth-child(even) .team-avatar{background:linear-gradient(135deg,var(--red),var(--red-600))}
 .team-card h4{font-size:1.18rem;margin-bottom:4px}
@@ -651,8 +654,8 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 .team-contact a{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s var(--ease);color:var(--green)}
 .team-contact a:hover{background:var(--green);border-color:var(--green);color:#fff;transform:translateY(-3px)}
 .team-contact a svg{width:18px;height:18px}
-@media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:460px){.team-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.team-grid{grid-template-columns:1fr;max-width:340px}}
 
 /* ============================================================ DOCUMENTS ACCORDION */
 .docs-wrap{max-width:920px}
