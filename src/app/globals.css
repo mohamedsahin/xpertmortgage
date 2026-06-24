@@ -265,6 +265,9 @@ header.nav.scrolled .brand img{height:50px}
 .svc p{color:var(--muted);font-size:.94rem}
 .svc .more{margin-top:16px;display:inline-flex;align-items:center;gap:6px;color:var(--red);font-weight:700;font-size:.86rem;opacity:0;transform:translateX(-6px);transition:.4s var(--ease)}
 .svc:hover .more{opacity:1;transform:none}
+/* stretched link — makes the whole card clickable via the "more" link */
+.svc .more.stretch::after{content:"";position:absolute;inset:0;z-index:1}
+.svc:has(.more.stretch){cursor:pointer}
 @media(max-width:920px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
@@ -525,7 +528,7 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 .aside-card p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
 @media(max-width:880px){.article{grid-template-columns:1fr;gap:34px}.article-aside{position:static}}
 
-/* keep the topbar uncluttered on phones — show the office landline only */
+/* keep the topbar uncluttered on phones — show the phone number only */
 @media(max-width:760px){.topbar .tb-l a:not(:first-child){display:none}}
 
 /* calc layout helper on calculator page */

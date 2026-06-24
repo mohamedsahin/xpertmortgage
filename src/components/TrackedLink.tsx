@@ -10,6 +10,7 @@ type Props = {
   /** the item that was clicked, e.g. the service or insight title */
   label: string;
   className?: string;
+  "aria-label"?: string;
   children: ReactNode;
 };
 
@@ -26,7 +27,7 @@ declare global {
  * present; silently no-ops otherwise. This lets us track which service /
  * insight a visitor clicked for lead-source reporting.
  */
-export default function TrackedLink({ href, event, label, className, children }: Props) {
+export default function TrackedLink({ href, event, label, className, children, ...rest }: Props) {
   const track = () => {
     if (typeof window === "undefined") return;
     window.dataLayer?.push({ event, item: label });
@@ -34,7 +35,7 @@ export default function TrackedLink({ href, event, label, className, children }:
   };
 
   return (
-    <Link href={href} className={className} onClick={track}>
+    <Link href={href} className={className} onClick={track} {...rest}>
       {children}
     </Link>
   );

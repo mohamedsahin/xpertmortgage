@@ -481,9 +481,8 @@ export const nav: NavItem[] = [
 
 // ---------- Contact ----------
 export const contact = {
-  phone: "+971 50 601 8455",        // mobile — also used for WhatsApp
-  landline: "04 335 789",           // office landline
-  whatsapp: "971506018455",         // digits only, international format (no + or spaces)
+  phone: "+971 4 335 789",          // office landline (with country code) — also used for WhatsApp
+  whatsapp: "9714335789",           // digits only, international format (no + or spaces)
   email: "info@xpertshome.com",
   location: "Tejasvi Business Center, Office 104, Umm Hurair Rd, Oud Metha, Bur Dubai",
   // Short Google Maps link (opens the exact office location).

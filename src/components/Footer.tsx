@@ -44,8 +44,7 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <h5>Get in touch</h5>
-            <a href={`tel:${contact.landline.replace(/\s/g, "")}`}>{contact.landline} (Office)</a>
-            <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone} (Mobile)</a>
+            <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <a href={contact.mapLink} target="_blank" rel="noopener noreferrer">Oud Metha, Bur Dubai</a>
             <Link href="/contact" className="btn btn-red" style={{ marginTop: 14 }}>Get in Touch</Link>

@@ -3,8 +3,7 @@ import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import Icon from "@/components/Icon";
-import Team from "@/components/Team";
-import { TrustStrip, ServicesGrid, InsightsGrid, Timeline, EndCta, Photo } from "@/components/Sections";
+import { TrustStrip, ServicesGrid, InsightsGrid, EndCta, Photo } from "@/components/Sections";
 import { AboutSkyline, BgSkyline } from "@/components/Skyline";
 import { services } from "@/lib/data";
 
@@ -86,20 +85,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="sec-pad process">
-        <div className="wrap">
-          <Reveal className="sec-head center">
-            <span className="eyebrow" style={{ display: "inline-flex" }}>The mortgage process</span>
-            <h2 className="h-sec">From consultation to <span className="text-green">keys in hand.</span></h2>
-          </Reveal>
-          <Timeline />
-          <Reveal style={{ textAlign: "center", marginTop: 44 }}>
-            <Link href="/process" className="btn btn-green">See how it works <Icon name="arrow-right" className="arr" /></Link>
-          </Reveal>
-        </div>
-      </section>
-
       {/* EMI CALCULATOR CTA */}
       <section className="sec-pad" style={{ background: "var(--ivory-2)" }}>
         <div className="wrap">
@@ -117,18 +102,6 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* OUR TEAM */}
-      <section className="sec-pad">
-        <div className="wrap">
-          <Reveal className="sec-head center">
-            <span className="eyebrow" style={{ display: "inline-flex" }}>Meet the experts</span>
-            <h2 className="h-sec">Our <span className="text-red">team.</span></h2>
-            <p className="lead" style={{ margin: "16px auto 0" }}>Dedicated mortgage professionals committed to getting you the right solution.</p>
-          </Reveal>
-          <Team />
         </div>
       </section>
 

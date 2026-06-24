@@ -34,13 +34,9 @@ export default function ContactPage() {
               <h2 style={{ margin: "16px 0 0" }}>Talk to a <span className="text-gold">mortgage expert.</span></h2>
               <p className="sub">Whether it&apos;s your first home, an investment, a refinance or a difficult case — we&apos;ll match you with the right solution.</p>
               <div className="cta-contacts">
-                <a href={`tel:${contact.landline.replace(/\s/g, "")}`}>
-                  <span className="ci"><Icon name="phone" /></span>
-                  <div><strong>{contact.landline}</strong><br /><small style={{ color: "#9fbdb0" }}>Office · Sun–Thu, 9am–6pm GST</small></div>
-                </a>
                 <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>
                   <span className="ci"><Icon name="phone" /></span>
-                  <div><strong>{contact.phone}</strong><br /><small style={{ color: "#9fbdb0" }}>Mobile · call or WhatsApp</small></div>
+                  <div><strong>{contact.phone}</strong><br /><small style={{ color: "#9fbdb0" }}>Call or WhatsApp · Sun–Thu, 9am–6pm GST</small></div>
                 </a>
                 <a href={`mailto:${contact.email}`}>
                   <span className="ci"><Icon name="mail" /></span>

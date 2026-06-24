@@ -60,7 +60,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
           <div className="sic"><Icon name={icon} /></div>
           <h3>{title}</h3>
           <p>{desc}</p>
-          <TrackedLink href={`/services/${slugify(title)}`} event="service_click" label={title} className="more">
+          <TrackedLink href={`/services/${slugify(title)}`} event="service_click" label={title} className="more stretch" aria-label={`Learn more about ${title}`}>
             Learn more <Icon name="arrow-right" />
           </TrackedLink>
         </Reveal>
@@ -77,7 +77,7 @@ export function InsightsGrid() {
           <div className="sic"><Icon name={icon} /></div>
           <h3>{title}</h3>
           <p>{desc}</p>
-          <TrackedLink href={`/insights/${slugify(title)}`} event="insight_click" label={title} className="more">
+          <TrackedLink href={`/insights/${slugify(title)}`} event="insight_click" label={title} className="more stretch" aria-label={`Read more about ${title}`}>
             Read more <Icon name="arrow-right" />
           </TrackedLink>
         </Reveal>
