@@ -34,9 +34,13 @@ export default function ContactPage() {
               <h2 style={{ margin: "16px 0 0" }}>Talk to a <span className="text-gold">mortgage expert.</span></h2>
               <p className="sub">Whether it&apos;s your first home, an investment, a refinance or a difficult case — we&apos;ll match you with the right solution.</p>
               <div className="cta-contacts">
+                <a href={`tel:${contact.landline.replace(/\s/g, "")}`}>
+                  <span className="ci"><Icon name="phone" /></span>
+                  <div><strong>{contact.landline}</strong><br /><small style={{ color: "#9fbdb0" }}>Office · Sun–Thu, 9am–6pm GST</small></div>
+                </a>
                 <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>
                   <span className="ci"><Icon name="phone" /></span>
-                  <div><strong>{contact.phone}</strong><br /><small style={{ color: "#9fbdb0" }}>Sun–Thu, 9am–6pm GST</small></div>
+                  <div><strong>{contact.phone}</strong><br /><small style={{ color: "#9fbdb0" }}>Mobile · call or WhatsApp</small></div>
                 </a>
                 <a href={`mailto:${contact.email}`}>
                   <span className="ci"><Icon name="mail" /></span>
@@ -48,9 +52,9 @@ export default function ContactPage() {
                   </span>
                   <div><strong>WhatsApp us</strong><br /><small style={{ color: "#9fbdb0" }}>Quick answers on the go</small></div>
                 </a>
-                <a href="#">
+                <a href={contact.mapLink} target="_blank" rel="noopener noreferrer">
                   <span className="ci"><Icon name="map-pin" /></span>
-                  <div><strong>{contact.location}</strong><br /><small style={{ color: "#9fbdb0" }}>By appointment</small></div>
+                  <div><strong>{contact.location}</strong><br /><small style={{ color: "#9fbdb0" }}>Open in Google Maps</small></div>
                 </a>
               </div>
             </Reveal>
@@ -58,6 +62,29 @@ export default function ContactPage() {
               <LeadForm />
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* OFFICE LOCATION MAP */}
+      <section className="sec-pad">
+        <div className="wrap">
+          <Reveal className="sec-head center">
+            <span className="eyebrow" style={{ display: "inline-flex" }}>Visit our office</span>
+            <h2 className="h-sec">Find us in <span className="text-red">Bur Dubai.</span></h2>
+            <p className="lead" style={{ margin: "16px auto 0" }}>{contact.location}</p>
+          </Reveal>
+          <Reveal className="map-wrap">
+            <iframe
+              src={contact.mapEmbed}
+              title="Xperts Home Mortgage office location"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <a className="map-open btn btn-red" href={contact.mapLink} target="_blank" rel="noopener noreferrer">
+              <Icon name="map-pin" /> Open in Google Maps
+            </a>
+          </Reveal>
         </div>
       </section>
     </>

@@ -75,7 +75,7 @@ export default function Home() {
           <Reveal className="sec-top">
             <div>
               <span className="eyebrow" style={{ display: "inline-flex" }}>Mortgage solutions for every need</span>
-              <h2 className="h-sec" style={{ marginTop: 12 }}>One company.<br /><span className="text-red">All mortgage solutions.</span></h2>
+              <h2 className="h-sec" style={{ marginTop: 12 }}>One Company,<br /><span className="text-red">All Mortgage Solutions.</span></h2>
             </div>
             <Link href="/services" className="link-arrow">View all {services.length} services <Icon name="arrow-right" /></Link>
           </Reveal>

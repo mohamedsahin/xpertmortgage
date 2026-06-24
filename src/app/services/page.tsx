@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <PageHead
         crumb="Services"
         eyebrow="Mortgage solutions for every need"
-        title="One company. All mortgage solutions."
+        title="One Company, All Mortgage Solutions."
         subtitle="For every need, every goal and every stage of life — from your first home to your next investment. Smart financing solutions designed around you."
         skyline
         actions={

@@ -1,13 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Icon from "./Icon";
 
+const INTEREST_OPTIONS = [
+  "Buy to Live", "Buy to Let", "Buyouts", "Refinance",
+  "Equity Release", "Off-Plan Mortgages", "Commercial Mortgages", "I have a complex case",
+];
+
 export default function LeadForm() {
+  // useSearchParams must live inside a Suspense boundary — the fallback must
+  // NOT itself read search params, or it bails out of static rendering too.
+  return (
+    <Suspense fallback={<div className="form" aria-hidden="true" />}>
+      <LeadFormInner />
+    </Suspense>
+  );
+}
+
+function LeadFormInner() {
+  const searchParams = useSearchParams();
+  // Prefill the "interested in" field when arriving from a service page,
+  // e.g. /contact?interest=Refinance. Falls back to the first option.
+  const interestParam = searchParams.get("interest");
+  const initialInterest = INTEREST_OPTIONS.includes(interestParam || "") ? (interestParam as string) : "Buy to Live";
+
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [category, setCategory] = useState("UAE Resident");
+  const [interest, setInterest] = useState(initialInterest);
 
   // Employment status doesn't apply to investors.
   const showEmployment = category !== "Investor";
@@ -61,15 +84,10 @@ export default function LeadForm() {
           <div className="frm-row">
             <div className="frm-field">
               <label>I&apos;m interested in</label>
-              <select name="interest" defaultValue="Buy to Live">
-                <option>Buy to Live</option>
-                <option>Buy to Let</option>
-                <option>Buyouts</option>
-                <option>Refinance</option>
-                <option>Equity Release</option>
-                <option>Off-Plan Mortgages</option>
-                <option>Commercial Mortgages</option>
-                <option>I have a complex case</option>
+              <select name="interest" value={interest} onChange={(e) => setInterest(e.target.value)}>
+                {INTEREST_OPTIONS.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
               </select>
             </div>
             <div className="frm-field">

@@ -1,8 +1,8 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
-import { trust, easy, services, difficult, steps, tips, insightCategories } from "@/lib/data";
+import TrackedLink from "./TrackedLink";
+import { trust, easy, services, difficult, steps, tips, insightCategories, slugify } from "@/lib/data";
 
 export function Placeholder({ label }: { label: string }) {
   return (
@@ -60,9 +60,9 @@ export function ServicesGrid({ limit }: { limit?: number }) {
           <div className="sic"><Icon name={icon} /></div>
           <h3>{title}</h3>
           <p>{desc}</p>
-          <Link href="/contact" className="more">
-            Enquire <Icon name="arrow-right" />
-          </Link>
+          <TrackedLink href={`/services/${slugify(title)}`} event="service_click" label={title} className="more">
+            Learn more <Icon name="arrow-right" />
+          </TrackedLink>
         </Reveal>
       ))}
     </div>
@@ -77,9 +77,9 @@ export function InsightsGrid() {
           <div className="sic"><Icon name={icon} /></div>
           <h3>{title}</h3>
           <p>{desc}</p>
-          <Link href="/contact" className="more">
-            Read insights <Icon name="arrow-right" />
-          </Link>
+          <TrackedLink href={`/insights/${slugify(title)}`} event="insight_click" label={title} className="more">
+            Read more <Icon name="arrow-right" />
+          </TrackedLink>
         </Reveal>
       ))}
     </div>

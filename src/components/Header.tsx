@@ -7,6 +7,7 @@ import Icon from "./Icon";
 import { nav, contact, company, waLink } from "@/lib/data";
 
 const tel = `tel:${contact.phone.replace(/\s/g, "")}`;
+const telLandline = `tel:${contact.landline.replace(/\s/g, "")}`;
 const wa = waLink();
 
 export default function Header() {
@@ -34,7 +35,8 @@ export default function Header() {
       <div className="topbar">
         <div className="wrap">
           <div className="tb-l" style={{ display: "flex", gap: 22, alignItems: "center" }}>
-            <a href={tel}><Icon name="phone" /> <span>{contact.phone}</span></a>
+            <a href={telLandline}><Icon name="phone" /> <span>{contact.landline}</span></a>
+            <a href={tel}><Icon name="message-circle" /> <span>{contact.phone}</span></a>
             <a href={`mailto:${contact.email}`}><Icon name="mail" /> <span>{contact.email}</span></a>
           </div>
           <div className="tb-r">
@@ -61,7 +63,8 @@ export default function Header() {
               <Link href="/contact" className="btn btn-red" onClick={close}>
                 Get a Free Consultation <Icon name="arrow-right" className="arr" />
               </Link>
-              <a className="dcontact" href={tel}><Icon name="phone" />{contact.phone}</a>
+              <a className="dcontact" href={telLandline}><Icon name="phone" />{contact.landline} (Office)</a>
+              <a className="dcontact" href={tel}><Icon name="phone" />{contact.phone} (Mobile)</a>
               <a className="dcontact" href={wa}><Icon name="message-circle" />WhatsApp us</a>
               <a className="dcontact" href={`mailto:${contact.email}`}><Icon name="mail" />{contact.email}</a>
             </div>

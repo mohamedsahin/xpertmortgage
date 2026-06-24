@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contact, company, waLink } from "@/lib/data";
+import { contact, company, social, waLink } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -14,13 +14,13 @@ export default function Footer() {
               solutions for residents, expats and investors across the UAE.
             </p>
             <div className="socials">
-              <a href="#" aria-label="Instagram">
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" /></svg>
               </a>
-              <a href="#" aria-label="LinkedIn">
+              <a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zM8 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23H8V8z" /></svg>
               </a>
-              <a href="#" aria-label="Facebook">
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z" /></svg>
               </a>
               <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -44,9 +44,10 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <h5>Get in touch</h5>
-            <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
+            <a href={`tel:${contact.landline.replace(/\s/g, "")}`}>{contact.landline} (Office)</a>
+            <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone} (Mobile)</a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <Link href="/contact">Dubai, UAE</Link>
+            <a href={contact.mapLink} target="_blank" rel="noopener noreferrer">Oud Metha, Bur Dubai</a>
             <Link href="/contact" className="btn btn-red" style={{ marginTop: 14 }}>Get in Touch</Link>
           </div>
         </div>

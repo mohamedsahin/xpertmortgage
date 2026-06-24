@@ -3,14 +3,19 @@ import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
-import { EndCta } from "@/components/Sections";
 import { careerValues, openings, contact } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Careers — Join Xperts Home Mortgage",
   description:
-    "Build your career with Xperts Home Mortgage. Join a fast-growing UAE mortgage advisory firm with great rewards, training and a supportive team. Explore our open roles.",
+    "Build your career with Xperts Home Mortgage. Join a fast-growing UAE mortgage advisory firm with great rewards, training and a supportive team. Submit your CV today.",
 };
+
+// Single, clear call-to-action — opens the visitor's email client with the CV
+// submission pre-addressed. (Client confirmed: keep the mailto approach.)
+const cvMailto = `mailto:${contact.email}?subject=${encodeURIComponent("CV Submission — Xperts Home Mortgage")}&body=${encodeURIComponent(
+  "Hi Xperts Home Mortgage team,\n\nPlease find my CV attached. I'd love to be considered for a suitable opportunity.\n\nName:\nRole of interest:\nPhone:\n\nThank you."
+)}`;
 
 export default function CareersPage() {
   return (
@@ -19,8 +24,10 @@ export default function CareersPage() {
         crumb="Careers"
         eyebrow="Join our team"
         title="Build your career with Xperts."
-        subtitle="We're growing fast and always looking for talented, driven people who love helping clients achieve their property dreams. Your Home, Our Expertise — and your next opportunity."
-        actions={<Link href="/contact" className="btn btn-red">Send us your CV <Icon name="arrow-right" className="arr" /></Link>}
+        subtitle="Join Xperts Home Mortgage and be part of a growing team dedicated to helping clients achieve their homeownership goals. Submit your CV and we'll contact you when a suitable opportunity becomes available."
+        actions={
+          <a href={cvMailto} className="btn btn-red">Upload Your CV <Icon name="arrow-right" className="arr" /></a>
+        }
       />
 
       {/* WHY WORK WITH US */}
@@ -42,12 +49,13 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* OPEN ROLES */}
+      {/* CURRENT OPENINGS (informational — single CTA is the CV section below) */}
       <section className="sec-pad services">
         <div className="wrap">
           <Reveal className="sec-head center">
             <span className="eyebrow" style={{ display: "inline-flex" }}>Open positions</span>
             <h2 className="h-sec">Current <span className="text-red">openings.</span></h2>
+            <p className="lead" style={{ margin: "16px auto 0" }}>Browse our current roles below, then submit your CV using the form at the bottom of the page.</p>
           </Reveal>
           <div className="svc-grid">
             {openings.map(([icon, title, desc], i) => (
@@ -55,28 +63,26 @@ export default function CareersPage() {
                 <div className="sic"><Icon name={icon} /></div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
-                <a href={`mailto:${contact.email}?subject=Application: ${encodeURIComponent(title)}`} className="more">
-                  Apply now <Icon name="arrow-right" />
-                </a>
               </Reveal>
             ))}
           </div>
-          <Reveal style={{ textAlign: "center", marginTop: 40 }}>
-            <p className="lead" style={{ margin: "0 auto 20px" }}>Don&apos;t see the right role? We&apos;d still love to hear from you.</p>
-            <a href={`mailto:${contact.email}?subject=Open Application`} className="btn btn-green">
-              Send your CV <Icon name="arrow-right" className="arr" />
-            </a>
-          </Reveal>
         </div>
       </section>
 
-      <EndCta
-        variant="green"
-        title="Ready to grow with us?"
-        text="Join a team that's redefining mortgage advisory in the UAE."
-      >
-        <Link href="/contact" className="btn btn-light">Get in Touch <Icon name="arrow-right" className="arr" /></Link>
-      </EndCta>
+      {/* CV UPLOAD — single, clear CTA */}
+      <section className="sec-pad endcta green" id="apply">
+        <Reveal className="wrap">
+          <h2 style={{ marginTop: 0 }}>Submit your CV</h2>
+          <p>
+            Don&apos;t see the perfect role right now? We&apos;re always keen to meet talented people.
+            Send us your CV and we&apos;ll be in touch when a suitable opportunity comes up.
+          </p>
+          <div className="ec-actions">
+            <a href={cvMailto} className="btn btn-light">Upload Your CV <Icon name="arrow-right" className="arr" /></a>
+            <Link href="/contact" className="btn" style={{ background: "rgba(255,255,255,.14)", color: "#fff" }}>Contact us</Link>
+          </div>
+        </Reveal>
+      </section>
     </>
   );
 }
