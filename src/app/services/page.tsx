@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import Icon from "@/components/Icon";
-import Reveal from "@/components/Reveal";
-import ClientTabs from "@/components/ClientTabs";
 import { ServicesGrid, TrustStrip, EndCta } from "@/components/Sections";
 
 export const metadata: Metadata = {
@@ -34,16 +32,6 @@ export default function ServicesPage() {
       </section>
 
       <TrustStrip />
-
-      <section className="sec-pad">
-        <div className="wrap">
-          <Reveal className="sec-head center">
-            <span className="eyebrow" style={{ display: "inline-flex" }}>Solutions tailored for every client</span>
-            <h2 className="h-sec">Built around <span className="text-red">your</span> situation.</h2>
-          </Reveal>
-          <ClientTabs />
-        </div>
-      </section>
 
       <EndCta
         variant="green"

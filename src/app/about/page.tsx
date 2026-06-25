@@ -3,7 +3,6 @@ import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
-import ClientTabs from "@/components/ClientTabs";
 import DocsAccordion from "@/components/DocsAccordion";
 import Team from "@/components/Team";
 import { TrustStrip, EndCta } from "@/components/Sections";
@@ -70,17 +69,6 @@ export default function AboutPage() {
               <p>{missionVision.vision}</p>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* CUSTOMER CATEGORIES */}
-      <section className="sec-pad">
-        <div className="wrap">
-          <Reveal className="sec-head center">
-            <span className="eyebrow" style={{ display: "inline-flex" }}>Solutions tailored for every client</span>
-            <h2 className="h-sec">Built around <span className="text-red">your</span> situation.</h2>
-          </Reveal>
-          <ClientTabs />
         </div>
       </section>
 
