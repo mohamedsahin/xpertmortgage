@@ -528,6 +528,18 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 .aside-card p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
 @media(max-width:880px){.article{grid-template-columns:1fr;gap:34px}.article-aside{position:static}}
 
+/* team member detail header — full (uncropped) image */
+.member-head{display:flex;gap:30px;align-items:flex-start;margin-bottom:26px;flex-wrap:wrap}
+.member-photo{width:100%;max-width:300px;height:auto;border-radius:var(--r-lg);display:block;flex:none;
+  background:var(--ivory-2);border:1px solid var(--line);box-shadow:var(--shadow-md)}
+.member-avatar{width:240px;height:288px;border-radius:var(--r-lg);flex:none;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:900;font-size:3.6rem;color:#fff;
+  background:linear-gradient(135deg,var(--green),var(--green-600));box-shadow:var(--shadow-md)}
+.member-head>div{flex:1;min-width:240px;padding-top:8px}
+.member-head .team-role{margin-bottom:0}
+@media(max-width:520px){.member-photo{max-width:100%}.member-avatar{width:100%;height:auto;aspect-ratio:5/6}}
+.member-head p svg{width:16px;height:16px;color:var(--green);vertical-align:-2px;margin-right:4px}
+
 /* keep the topbar uncluttered on phones — show the phone number only */
 @media(max-width:760px){.topbar .tb-l a:not(:first-child){display:none}}
 
@@ -666,21 +678,28 @@ footer{background:var(--ink);color:#b7b0a6;padding:64px 0 30px}
 
 /* ============================================================ OUR TEAM */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:920px;margin:0 auto}
-.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
+.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);position:relative;cursor:pointer;
   padding:32px 24px;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s}
 .team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:transparent}
-.team-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 18px;display:block;
-  border:3px solid var(--ivory-2);box-shadow:var(--shadow-sm)}
+/* stretched link — whole card opens the member's profile */
+.team-stretch{color:inherit}
+.team-stretch::after{content:"";position:absolute;inset:0;z-index:1}
+.team-card:hover h4{color:var(--red)}
+.team-more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--red);font-weight:700;font-size:.82rem;opacity:0;transform:translateY(4px);transition:.4s var(--ease)}
+.team-more svg{width:15px;height:15px}
+.team-card:hover .team-more{opacity:1;transform:none}
+.team-photo{width:100%;max-width:240px;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:var(--r-md);
+  margin:0 auto 18px;display:block;border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:border-color .4s var(--ease)}
 .team-card:hover .team-photo{border-color:var(--gold-soft)}
-.team-avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
-  font-family:var(--font-display);font-weight:900;font-size:2.4rem;color:#fff;letter-spacing:.02em;
+.team-avatar{width:100%;max-width:240px;aspect-ratio:4/5;border-radius:var(--r-md);margin:0 auto 18px;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:900;font-size:3rem;color:#fff;letter-spacing:.02em;
   background:linear-gradient(135deg,var(--green),var(--green-600));box-shadow:var(--shadow-sm)}
 .team-card:nth-child(even) .team-avatar{background:linear-gradient(135deg,var(--red),var(--red-600))}
 .team-card h4{font-size:1.18rem;margin-bottom:4px}
 .team-role{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:.82rem;
   color:var(--gold);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
 .team-card p{color:var(--muted);font-size:.9rem;line-height:1.55}
-.team-contact{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.team-contact{display:flex;gap:10px;justify-content:center;margin-top:18px;position:relative;z-index:2}
 .team-contact a{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s var(--ease);color:var(--green)}
 .team-contact a:hover{background:var(--green);border-color:var(--green);color:#fff;transform:translateY(-3px)}
 .team-contact a svg{width:18px;height:18px}

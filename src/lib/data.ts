@@ -15,7 +15,18 @@ export type Client = [
 export type NavItem = { label: string; href: string };
 export type DocGroup = { group: string; items: string[] };
 export type DocCategory = { key: string; icon: string; emoji: string; label: string; groups: DocGroup[] };
-export type Member = { name: string; role: string; bio?: string; photo?: string; email?: string; phone?: string };
+export type Member = {
+  name: string;
+  slug: string;
+  role: string;
+  bio?: string;          // short bio shown on the team card
+  longBio?: string[];    // paragraphs shown on the detail page
+  photo?: string;
+  email?: string;
+  phone?: string;
+  experience?: string;   // e.g. "13+ years"
+  expertise?: string[];  // key areas, shown on the detail page
+};
 
 // ---------- Brand ----------
 export const company = {
@@ -243,25 +254,61 @@ export const missionVision = {
 // Photos live in /public/images/team/. Members without a photo show an initials avatar.
 export const team: Member[] = [
   {
-    name: "Hashim",
-    role: "Operations Executive",
-    photo: "/images/team/hashim-avatar.jpg",
-    bio: "Keeps every application moving smoothly — coordinating documentation and lenders so your mortgage process stays fast and stress-free.",
-    email: "hashim@xpertshome.com",
-  },
-  {
-    name: "Prakash",
-    role: "Mortgage Advisor",
-    photo: "/images/team/prakash-avatar.jpg",
-    bio: "Guides clients to the right mortgage solution with expert, honest advice tailored to your goals and situation.",
-    email: "prakash@xpertshome.com",
+    name: "Avinash Upadhyay",
+    slug: "avinash-upadhyay",
+    role: "Founder & Managing Director",
+    // photo: "/images/team/avinash-avatar.jpg", // TODO: add photo to /public/images/team/
+    bio: "A mortgage professional with 13+ years across the UAE and India, leading Xperts with a focus on transparent, efficient solutions.",
+    longBio: [
+      "Avinash is a mortgage professional with over 13 years of experience across the UAE and India, specializing in real estate finance, mortgage structuring, and banking relationships.",
+      "He brings strong expertise in mortgage approvals and leads the company with a focus on transparent and efficient solutions — making sure every client gets honest advice and the best outcome from our network of 20+ leading banks.",
+    ],
+    email: "avinash@xpertshome.com",
+    experience: "13+ years",
+    expertise: ["Real estate finance", "Mortgage structuring", "Banking relationships", "Mortgage approvals"],
   },
   {
     name: "Sunil",
+    slug: "sunil",
     role: "Business Development Manager",
+    // photo: "/images/team/sunil-avatar.jpg", // TODO: add photo to /public/images/team/
+    bio: "Drives client acquisition and consultations — understanding your needs and offering tailored financing solutions.",
+    longBio: [
+      "Sunil is responsible for client acquisition and mortgage consultations at Xperts Home Mortgage.",
+      "He focuses on understanding client needs and offering tailored financing solutions, while maintaining strong relationships across the UAE banking sector to secure the right options for every client.",
+    ],
     email: "sunil@xpertshome.com",
+    expertise: ["Client acquisition", "Mortgage consultations", "Tailored financing", "Banking relationships"],
+  },
+  {
+    name: "Prakash Sangroula",
+    slug: "prakash-sangroula",
+    role: "Mortgage Advisor / Credit Analyst",
+    photo: "/images/team/prakash-avatar.jpg",
+    bio: "Handles eligibility checks, financial assessment and mortgage structuring — guiding clients through their borrowing options.",
+    longBio: [
+      "Prakash handles client eligibility checks, financial assessment, and mortgage structuring at Xperts Home Mortgage.",
+      "He ensures accurate documentation and guides clients through their borrowing capacity and options, so you always understand exactly where you stand and what you qualify for.",
+    ],
+    email: "prakash@xpertshome.com",
+    expertise: ["Eligibility checks", "Financial assessment", "Mortgage structuring", "Documentation accuracy"],
+  },
+  {
+    name: "Hashim Asaraf",
+    slug: "hashim-asaraf",
+    role: "Operations Executive",
+    photo: "/images/team/hashim-avatar.jpg",
+    bio: "Manages end-to-end processing, documentation and bank coordination — keeping your application moving smoothly.",
+    longBio: [
+      "Hashim manages end-to-end mortgage processing, documentation, and coordination with banks and clients.",
+      "He ensures a smooth workflow and timely updates throughout the mortgage process, so your application stays fast, organised and stress-free from start to finish.",
+    ],
+    email: "hashim@xpertshome.com",
+    expertise: ["Mortgage processing", "Documentation", "Bank coordination", "Client updates"],
   },
 ];
+
+export const getMember = (slug: string) => team.find((m) => m.slug === slug);
 
 // ---------- Insights (blog) categories ----------
 export const insightCategories: Trio[] = [
